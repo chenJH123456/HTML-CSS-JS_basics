@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 精准选择元素 */
+        div.box{
+            background-color: red;
+        }
+        /* !!!!!加空格是后代选择器!!!!! */
+        /* div .box{
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">交集选择器</div>
+
+    <div>交集选择器</div>
+
+    <div>
+        <p class="box">交集选择器</p>
+    </div>
+    
+    <p class="box">交集选择器</p>
+</body>
+</html>

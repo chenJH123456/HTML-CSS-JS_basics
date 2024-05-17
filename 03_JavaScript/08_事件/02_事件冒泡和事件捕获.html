@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			.box span {
+				width: 100px;
+				height: 100px;
+				background-color: rebeccapurple;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span></span>
+		</div>
+
+		<script>
+			var bodyEl = document.body;
+			var divEl = document.querySelector('.box');
+			var spanEl = document.querySelector('span');
+
+			// 先捕获再冒泡
+			// 从里往外冒泡(事件冒泡)(默认)
+			divEl.onclick = function () {
+				console.log('冒泡div元素');
+			};
+			spanEl.onclick = function () {
+				console.log('冒泡span元素');
+			};
+			bodyEl.onclick = function () {
+				console.log('冒泡body元素');
+			};
+
+			// 从外往里捕获(事件捕获)
+			spanEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了span元素');
+				},
+				true
+			);
+			divEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了div元素');
+				},
+				true
+			);
+			bodyEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了body元素');
+				},
+				true
+			);
+		</script>
+	</body>
+</html>

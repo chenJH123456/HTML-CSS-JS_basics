@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 将字体引入到网页 */
+        @font-face {
+            font-family: "ziti";
+            src: url("./字体资源2/GEETYPE-XingCaoGBT-Flash.eot"); /* IE9 */
+            src: url("./字体资源2/GEETYPE-XingCaoGBT-Flash.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+            url("./字体资源2/GEETYPE-XingCaoGBT-Flash.woff") format("woff"), /* chrome、firefox */
+            url("./字体资源2/GEETYPE-XingCaoGBT-Flash.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+            url("./字体资源2/GEETYPE-XingCaoGBT-Flash.svg#uxfonteditor") format("svg"); /* iOS 4.1- */
+        
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        /* 步骤 */
+        /* 
+            1.下载的字体去 https://font.qqe2.com/# 左边打开
+            2.上方 zip 下载到本地
+            3.复制文件.eot/.svg/.ttf/.woff 到上一级目录
+            4.@font-face部分在下载文件里的 icon.css 里
+            5.修改 @font-face部分路径
+            6.font-style: normal; font-weight: normal;
+        */
+        
+
+        .box{
+            font-family: "ziti";
+        }
+    </style>
+</head>
+<body>
+    <div class="box">引用字体练习</div>
+</body>
+</html>

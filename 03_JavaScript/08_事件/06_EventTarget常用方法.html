@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div>
+			<button>按钮</button>
+		</div>
+
+		<script>
+			var btnEl = document.querySelector('button');
+
+			var foo = function () {
+				console.log('监听到按钮点击');
+			};
+			btnEl.addEventListener('click', foo);
+
+			// 移除监听
+			setTimeout(function () {
+				//函数是一种对象
+				btnEl.removeEventListener('click', function () {
+					//无法移除监听,不是同一个对象
+				});
+			}, 5000);
+
+			setTimeout(function () {
+				btnEl.removeEventListener('click', foo); //正确移除监听
+			}, 5000);
+
+			window.addEventListener('call', function () {
+				console.log('监听到派发事件');
+			});
+			setTimeout(function () {
+				window.dispatchEvent(new Event('call')); //派发事件
+			}, 5000);
+		</script>
+	</body>
+</html>

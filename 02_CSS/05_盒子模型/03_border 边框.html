@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            /* width */
+            border-top-width: 10px;
+            border-right-width: 20px;
+            border-bottom-width: 30px;
+            border-left-width: 40px;
+
+            /* style */
+            border-top-style: solid;
+            border-right-style: dashed;
+            border-bottom-style: groove;
+            border-left-style: ridge;
+
+            /* color */
+            border-top-color: red;
+            border-right-color: blue;
+            border-bottom-color: yellow;
+            border-left-color: green;
+        }
+        /* 缩写 */
+        .dox{
+            width: 300px;
+            height: 300px;
+            border-width: 10px 20px 30px 40px;
+            border-style: solid dashed groove ridge;
+            border-color: red blue yellow green;
+        }
+        /* 三角 */
+        .eox{
+            width: 100px;
+            height: 100px;
+
+            border: 50px solid transparent;
+            border-top-color: orange;
+
+            box-sizing: border-box;
+
+            /* 旋转 */
+            /* 旋转中心点 */
+            transform-origin: center 25%;
+            transform: rotate(90deg)
+
+        }
+    </style>
+    <!-- 边框样式见typora-CSS文档 -->
+</head>
+<body>
+    <div class="box">边框</div>
+    <div class="dox">边框</div>
+    <div class="eox"></div>
+</body>
+</html>

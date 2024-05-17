@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aox{
+            background-color: red;
+            display: inline;/*改成行内级元素*/
+            /* 不能设置宽高 // 可以在同一行 // 宽高内容决定*/
+        }
+        .box{
+            background-color: yellow;
+            display: block;/*改成块级元素*/
+            /* 可以设置宽高 // 永远独占一行 // 宽高内容决定*/
+        }
+        .cox{
+            background-color: blue;
+            display: inline-block;/*改成块级兼行内级元素*/
+            /* 可以设置宽高 // 可以在同一行 // 宽高内容决定*/
+        }
+        .dox{
+            background-color: green;
+            width: 300px;
+            height: 300px;
+        }
+        .eox{
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="aox">div改成行内级</div>
+    <span>行内级检测</span>
+    <span class="box">span改成块级</span>
+    <a href="#">百度一下</a>
+    <div class="cox">同时具备行内级块级</div>
+    <span>行内级块级检测</span>
+    <div class="dox">改变块级div宽高</div>
+    <span>span检测</span>
+    <div></div> 
+    <span class="eox">改变行内级span宽高</span><!--行内非替换元素不能设置宽高-->
+    <span>span检测</span>
+</body>
+</html>

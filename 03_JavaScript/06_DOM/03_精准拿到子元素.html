@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</table>
+
+		<form action="">
+			<input name="account" type="text">
+			<input name="password" type="password">
+			<input name="hobbies" type="checkbox" checked>
+			<select name="fruits">
+			<option value="apple">苹果</option>
+			<option value="orange">橘子</option)
+			</select>
+		</form>
+
+		<script>
+			// table方法
+			var tableEl = document.body.firstElementChild;
+			var rowEl = tableEl.rows[1];
+			console.log(rowEl.cells[0]);
+			console.log(rowEl.sectionRowIndex);
+			console.log(rowEl.rowIndex);
+
+			// from 方法
+			//1.获取form
+			//var formEl = document.body.firstElementChild
+			var formEl= document.forms[e]
+			//2.获取form中的子元素
+			var inputEl = formEl.elements.account
+			setTimeout(function(){
+				console.log(inputEl.value)
+			},5000)//等待5秒后返回值
+		</script>
+	</body>
+</html>

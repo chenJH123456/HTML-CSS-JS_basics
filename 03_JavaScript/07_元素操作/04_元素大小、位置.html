@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			属性设置或返回指定节点的文本内容，以及它的所有后代。如果您设置了属性，会删除所有子节点，并被替换为包含给定字符串的一个单独的文本节点。提示：有时，此属性可用于取代属性，但是请记住此属性同时会返回所有子节点的文本。
+		</div>
+
+		<script>
+			var boxEl = document.querySelector('.box');
+
+			// // 获取样式(局限性强)
+			// var boxStyle = getComputedStyle(boxEl);
+			// console.log(boxStyle.width, boxStyle.height);
+
+			// 获取更多信息
+			console.log(boxEl.clientWidth);
+			// 更多属性见typora
+		</script>
+	</body>
+</html>

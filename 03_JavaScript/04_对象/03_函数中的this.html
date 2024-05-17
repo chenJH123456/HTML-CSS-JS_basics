@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// this大多数情况指向一个对象
+
+			// 1.普通函数被默认调用,this指向window
+			function foo(name, age) {
+				console.log(arguments);
+				console.log(this);
+			}
+			foo('abc', 123);
+			function sayHello(name) {
+				console.log(this);
+			}
+			sayHello();
+
+			// 2.函数被某对象引用或调用,this指向这个对象
+			var obj = {
+				name: 'N',
+				running: function () {
+					console.log(this);
+					console.log(obj);
+					console.log(this === obj);
+				},
+			};
+
+			//obj.running();//this指向obj
+
+			// var fn = obj.running;
+			// fn(); //默认调用,this指向window
+
+			// 3.this在开发中的应用
+			var info = {
+				name: 'N',
+				age: 18,
+				running: function () {
+					console.log('执行running', this.name);
+				},
+				eatting: function () {
+					console.log('执行eatting', this.name);
+				},
+				studying: function () {
+					console.log('执行studying', this.name);
+				},
+			};
+			info.running();
+			info.eatting();
+			info.studying();
+		</script>
+	</body>
+</html>

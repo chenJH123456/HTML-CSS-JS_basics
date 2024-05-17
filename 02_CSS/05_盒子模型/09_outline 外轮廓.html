@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+
+            border: 50px solid orange;
+            padding: 30px;
+
+            /* 不占据空间 */
+            outline: 20px solid;
+        }
+        a{
+            margin-top: 15px;
+            display: inline-block;
+        }
+        a:focus{
+            /* 去除默认外轮廓 */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <a href="#">百度一下</a>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*元素选择器:权重 1*/
+        div{
+            background-color: red;
+        }
+        .aox{
+            background-color: blue;
+        }
+        .box{
+            background-color: green;
+        }
+        .cox{
+            background-color: purple;
+        }
+        .dox{/* 权重相同时，后属性生效 */
+            background-color: orange;
+        }
+
+        p{
+            background-color: red;
+        }
+        .Aox{
+            background-color: blue !important;/*权重10000*/
+        }
+        .Box{
+            background-color: green;
+        }
+        .Cox{
+            background-color: purple;
+        }
+        .Dox{
+            background-color: orange;
+        }
+
+        /*元素选择器/伪元素:权重 100*/
+        #eox{ 
+            background-color: aquamarine;
+        }
+
+        /*类选择器:权重 10*/
+        .fox{
+            background-color: blueviolet;
+        }
+
+        /*通配选择器:权重 0*/
+        *{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="aox box cox dox">层叠</div>
+    <p class="Aox Box Cox Dox">层叠</p>
+    <!-- 内联样式: -->
+    <div class="aox box cox dox" style="background-color: pink;">层叠</div>
+    <div id="eox">层叠</div>
+    <div class="fox">层叠</div>
+</body>
+</html>

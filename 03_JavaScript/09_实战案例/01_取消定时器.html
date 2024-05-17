@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button class="out1">取消setTimeout定时器</button>
+		<button class="out2">取消setTimeout定时器</button>
+		<script>
+			// 取消定时器
+			// 1.setTimeout
+			function foo1() {
+				console.log('foo1被调用');
+			}
+			var timeoutID = setTimeout(foo1, 3000);
+
+			var timeoutBtn = document.querySelector('.out1');
+			timeoutBtn.onclick = function () {
+				// 取消调度
+				clearTimeout(timeoutID);
+			};
+
+			// 2.setInterval
+			function foo2() {
+				console.log('foo2被调用');
+			}
+			var timeStopID = setInterval(foo2, 3000);
+
+			var timeStopBtn = document.querySelector('.out2');
+			timeStopBtn.onclick = function () {
+				//取消调度
+				clearInterval(timeStopID);
+			};
+		</script>
+	</body>
+</html>

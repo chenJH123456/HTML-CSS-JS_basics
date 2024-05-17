@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+            // 原理
+			// function foo(fn) {
+			// 	fn(); //执行bar函数
+			// 	// 函数的回调
+			// }
+
+			// function bar() {
+			// 	console.log('已执行bar函数');
+			// }
+
+			// // 不能是(bar()),(bar())相当于执行bar函数后的结果,相当于foo(undefined)
+			// foo(bar); //bar当成参数传递给foo
+
+            //案例
+            function request(url,callback){
+                console.log("已发送网络请求(需要时间较长)")
+                var list=["js","js学习","js高级编程"]
+                callback(list)
+            }
+
+            function handleResult(res){
+                console.log("在handleResult中拿到结果:",res)
+            }
+
+            request("http://www.baidu.com/abc/getSearchResult",handleResult)
+		</script>
+	</body>
+</html>

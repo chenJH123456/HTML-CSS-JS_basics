@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* 公共的class */
+			.content {
+				width: 1190px;
+				margin: 0 auto;
+				background-color: pink;
+				height: 200px;
+			}
+			/* 单独样式 */
+			.item {
+				width: 230px;
+				height: 322px;
+				background-color: yellow;
+				float: left;
+				margin-left: 10px;
+				margin-bottom: 15px;
+			}
+			.item:nth-child(5n-4) {
+				margin-left: 0;
+			}
+			.line {
+				height: 10px;
+				background-color: red;
+
+				/* 要求元素顶部低于之前生成的所有右浮动元素的底部 */
+				/* clear: left; */
+			}
+
+			/* 最终解决方案 */
+			.final::after {
+				height: 10px;
+				background-color: red;
+
+				content: '';
+				/* both是所有浮动元素 */
+				clear: both;
+				/* 块级元素独占一行 */
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content final">
+			<div class="item item1">1</div>
+			<div class="item item2">2</div>
+			<div class="item item3">3</div>
+			<div class="item item4">4</div>
+			<div class="item item5">5</div>
+			<div class="item item1">1</div>
+			<div class="item item2">2</div>
+			<div class="item item3">3</div>
+			<div class="item item4">4</div>
+			<div class="item item5">5</div>
+
+			<div class="line"></div>
+		</div>
+	</body>
+</html>

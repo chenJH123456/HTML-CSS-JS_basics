@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="box">box</div>
+		<script>
+			// 获取三个节点
+			var bodyChildNodes = document.body.childNodes;
+			var commentNode = bodyChildNodes[1];
+			var textNode = bodyChildNodes[2];
+			var divNode = bodyChildNodes[3];
+			console.log(bodyChildNodes, commentNode, textNode, divNode);
+
+			// 节点类型 nodeType
+			for (var node of bodyChildNodes) {
+				if (node.nodeType === 8) {
+				} else if (node.nodeType === 3) {
+				} else if (node.nodeType === 1) {
+				}
+			}
+			console.log(
+				// bodyChildNodes.nodeType,
+				commentNode.nodeType,
+				textNode.nodeType,
+				divNode.nodeType
+			);
+			console.log(Node.COMMENT_NODE);
+
+			// 节点名称 nodeName
+			console.log(commentNode.nodeName, textNode.nodeName, divNode.nodeName);
+			console.log(commentNode.tagName, textNode.tagName, divNode.tagName);
+		</script>
+	</body>
+</html>

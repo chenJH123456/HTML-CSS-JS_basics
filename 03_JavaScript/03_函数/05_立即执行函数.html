@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button class="btn">按钮1</button>
+		<button class="btn">按钮2</button>
+		<button class="btn">按钮3</button>
+		<button class="btn">按钮4</button>
+
+		<script>
+			function foo1() {
+				console.log('我在前');
+			}
+			foo1();
+			//立即执行函数前的;不可省略
+
+			// 独立的函数作用域
+			(function foo2() {
+				//可以不定义函数名
+				console.log('我在后');
+			})(); //外层()表示函数是一个整体,尾部()表示立即执行
+
+			// 应用实例
+			// 监听按钮的点击
+			var btnEls = document.querySelectorAll('.btn');
+
+			for (var i = 0; i < btnEls.length; i++) {
+				var btn = btnEls[i];
+				(function (m) {
+					btn.onclick = function () {
+						console.log(`按钮${m + 1}发生了点击`);
+					};
+				})(i);
+			}
+			console.log(i);
+		</script>
+	</body>
+</html>

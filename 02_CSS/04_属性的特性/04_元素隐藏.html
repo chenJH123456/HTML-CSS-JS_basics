@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aox{/*不占据任何空间*/
+            display: none;
+        }
+        .box{/*会占据空间 // 默认为visible可见*/
+            visibility: hidden;
+        }
+        .cox{/*不影响子元素*/
+            color: rgba(255, 0, 0, 0);
+        }
+        .dox{/*会影响子元素(例:backgroundcolor)所有的透明度*/
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="aox">我不见了1号</div>
+    <div class="box">我不见了2号</div>
+    <div class="cox">我不见了3号</div>
+    <div class="dox">我不见了4号</div>
+    <div>总感觉头上有什么东西</div>
+</body>
+</html>

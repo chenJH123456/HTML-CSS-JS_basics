@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            background-color: red;
+
+            background-image: url(../00_图片/bilibili图片.avif);
+            background-repeat: no-repeat;
+
+            /* 完全填充图片 */
+            background-size: contain;
+            /* 完全填充块级元素 */
+            background-size: cover;
+            /* 横纵填充百分比 */
+            background-size: 100% 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

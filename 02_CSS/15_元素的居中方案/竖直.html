@@ -1,0 +1,62 @@
+<!-- 
+
+    1.绝对定位:
+    * 元素有高度情况下 top 0/ buttom 0/ margin: auto 0;
+ 
+
+    2.flex:
+    * 父元素 align-item: center
+
+    3.top-transfom:
+    * 下移 父元素 的50%
+      上移 自己  的50%
+
+    弊端:
+
+    *绝对定位:
+      1> 必须使用定位(脱离标准流)
+      2> 必须给元素使用高度
+
+    *flex:
+      1> 当前flex局部中所有元素都会被垂直居中
+      2> 相对来说,兼容性差一点
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				height: 300px;
+				background-color: orange;
+			}
+			.box {
+				display: inline-block;
+				height: 100px;
+				background-color: #f00;
+
+				/* 
+                    1.下移 父元素 的50%
+                    2.上移  自己 的50%
+                */
+				/* margin-top的百分比是相对于父元素的宽度 */
+				/* margin-top: 50%; */
+
+				position: relative;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">aaaa</div>
+			aaaaa
+		</div>
+	</body>
+</html>

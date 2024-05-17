@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.item {
+				position: fixed;
+				width: 100px;
+				height: 100px;
+				left: 0;
+				right: 0;
+				background-color: red;
+			}
+			.box2 {
+				left: 20px;
+				top: 20px;
+				background-color: blue;
+			}
+			.box3 {
+				left: 40px;
+				top: 40px;
+				background-color: yellow;
+			}
+
+			.box1 {
+				/* 改变层叠顺序 */
+				z-index: 100;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="item box1">1</div>
+		<div class="item box2">2</div>
+		<div class="item box3">3</div>
+	</body>
+</html>

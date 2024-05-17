@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div>
+			<button>按钮</button>
+		</div>
+
+		<script>
+			var btnEl = document.querySelector('button');
+			var divEl = document.querySelector('div');
+
+			divEl.onclick = function (event) {
+				console.log(this);
+				console.log(event.currentTarget);
+				console.log(divEl);
+				console.log(this === divEl);
+
+				////1.偶尔会使用
+				// console.log('事件类型:', event.type);
+				// console.log('事件阶段:', event.eventPhase);
+
+				// //2.比较少使用
+				// console.log('事件元素中位置', event.offsetX, event.offsetY);
+				// console.log('事件客户端中位置', event.clientX, event.clientY);
+				// console.log('事件页面中位置', event.pageX, event.pageY);
+				// console.log('事件在屏幕中位置', event.screenX, event.screenY);
+
+				//3.target/currentTarget
+				console.log(event.target); //指向事件元素
+				console.log(event.currentTarget); //指向处理该事件的元素
+				console.log(event.currentTarget === event.target);
+			};
+		</script>
+	</body>
+</html>

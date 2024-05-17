@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button class="btn">计数</button>
+		<h2 class="counter">0</h2>
+
+		<script>
+			var btnEl = document.querySelector('.btn');
+			var h2El = document.querySelector('.counter');
+
+			var counter = 0;
+			btnEl.onclick = function () {
+				counter++;
+				h2El.textContent = counter;
+			};
+		</script>
+	</body>
+</html>

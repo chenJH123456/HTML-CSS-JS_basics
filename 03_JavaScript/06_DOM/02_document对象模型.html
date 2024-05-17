@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="box">eeeee</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+
+		<script>
+			/////	节点之间的导航	/////
+
+			// 在控制器内获取本html代码
+			var htmlEl = document.documentElement;
+			// 获取节点的导航
+			var bodyEl = document.body;
+
+			var headEl = document.head;
+			var docttype = document.doctype;
+			console.log(htmlEl, bodyEl, headEl, docttype);
+
+			// 获取body所有子节点(换行也是文本)
+			console.log(bodyEl.childNodes);
+
+			// 获取body第一个子节点
+			var FirstChild = bodyEl.firstChild;
+			console.log(FirstChild);
+
+			// 获取body的注释
+			var CommentChild = FirstChild.nextSibling;
+			console.log(CommentChild);
+
+			///// 元素之间的导航	/////
+			var childElement = bodyEl.children;
+			console.log(childElement);
+
+			// 获取box元素(两种方法)
+			var boxEl1 = bodyEl.firstElementChild;
+			var boxEl2 = bodyEl.children[0];
+			console.log(boxEl1);
+			console.log(boxEl2);
+
+			// ?????
+			document.body = document.querySelector('body');
+		</script>
+	</body>
+</html>

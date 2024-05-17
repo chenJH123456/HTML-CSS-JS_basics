@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1 class="time">2024-5-13 09:25:00</h1>
+
+		<script>
+			function padLeft(content, count, padStr) {
+				count = count || 2;
+				padStr = padStr || '0';
+
+				content = String(content);
+				return content.padStart(count, padStr);
+			}
+
+			var timeEl = document.querySelector('.time');
+
+			// var date = new Date();
+
+			// 方法一: toISOString
+			// timeEl.textContent = date.toISOString();
+
+			// 方法二: 一一获取
+			setInterval(function () {
+				var date = new Date();
+				//  没有前导0
+				// var year = date.getFullYear();
+				// var mouth = date.getMonth();
+				// var day = date.getDate();
+				// var hour = date.getHours();
+				// var minute = date.getMinutes();
+				// var second = date.getSeconds();
+
+				//  有前导0,但得封装工具函数
+				var year = padLeft(date.getFullYear());
+				var mouth = padLeft(date.getMonth());
+				var day = padLeft(date.getDate());
+				var hour = padLeft(date.getHours());
+				var minute = padLeft(date.getMinutes());
+				var second = padLeft(date.getSeconds());
+				timeEl.textContent = `${year}-${mouth}-${day} ${hour}:${minute}:${second}`;
+			});
+		</script>
+	</body>
+</html>

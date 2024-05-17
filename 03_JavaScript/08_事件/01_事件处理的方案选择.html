@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 直接在HTML中编写JS -->
+		<button onclick="console.log('点击了按钮1');">按钮1</button>
+
+		<button class="btn2">按钮2</button>
+		<button class="btn3">按钮3</button>
+
+		<script>
+			// 获取元素对象
+			var btn2El = document.querySelector('.btn2');
+			var btn3El = document.querySelector('.btn3');
+
+			// onclick属性
+			function handleClick01() {
+				console.log('执行了按钮2的第一个功能'); //会被覆盖
+			}
+			function handleClick02() {
+				console.log('执行了按钮2的第二个功能');
+			}
+			btn2El.onclick = handleClick01;
+			btn2El.onclick = handleClick02;
+
+			// addEventListener (多事件同时监听)
+			btn3El.addEventListener('click', function () {
+				console.log('监听到btn3事件(1)');
+			});
+			btn3El.addEventListener('click', function () {
+				console.log('监听到btn3事件(2)');
+			});
+			btn3El.addEventListener('click', function () {
+				console.log('监听到btn3事件(3)');
+			});
+		</script>
+	</body>
+</html>

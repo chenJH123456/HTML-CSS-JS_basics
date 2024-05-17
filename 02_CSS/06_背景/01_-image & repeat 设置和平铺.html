@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 900px;
+            height: 900px;
+            background-color: red;
+
+            /* 设置背景图片：第一张图在最上面 */
+            /* 默认平铺：repeat */
+            background-image: url(../00_图片/bilibili图片.avif), url(../00_图片/季.jpg);
+            /* 只在水平平铺 */
+            background-repeat: repeat-x;
+            /* 只在竖直平铺 */
+            background-repeat: repeat-y;
+            /* 平铺终止 */
+            background-repeat:no-repeat;
+            /* 效果为最后一次设置 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

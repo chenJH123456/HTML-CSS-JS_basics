@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				color: red;
+				font-size: 20px;
+			}
+			.box .time {
+				background-color: red;
+				color: white;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="time hour">03</span>
+			<span class="split">:</span>
+			<span class="time minute">17</span>
+			<span class="split">:</span>
+			<span class="time second">50</span>
+		</div>
+
+		<!-- 引入js文件 -->
+		<script src="./00_format.js"></script>
+		<script>
+			// 获取元素
+			var hourEl = document.querySelector('.hour');
+			var minuteEl = document.querySelector('.minute');
+			var secondEl = document.querySelector('.second');
+
+			var endDate = new Date();
+			endDate.setHours(24);
+			endDate.setMinutes(0);
+			endDate.setSeconds(0);
+			endDate.setMilliseconds(0);
+
+			setInterval(function () {
+				// 倒计时计算
+				var nowDate = new Date();
+				var intervalTime = Math.floor(
+					(endDate.getTime() - nowDate.getTime()) / 1000
+				);
+				// console.log(intervalTime);//时间总差值
+
+				var hour = Math.floor(intervalTime / 3600);
+				var minute = Math.floor(intervalTime / 60) % 60;
+				var second = Math.floor(intervalTime % 60);
+				//设置内容
+				hourEl.textContent = formatPadLeft(hour);
+				minuteEl.textContent = formatPadLeft(minute);
+				secondEl.textContent = formatPadLeft(second);
+			});
+		</script>
+	</body>
+</html>

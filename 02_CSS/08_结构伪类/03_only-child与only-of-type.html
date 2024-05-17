@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 父元素中含有的唯一元素 */
+        div>:only-child{
+            background-color: aquamarine;
+        }
+
+        /* 父元素中含有的不重复标签 */
+        div>:only-of-type{
+            background-color: yellow;
+        }
+
+        /* HTML元素 */
+        :root{
+            font-size: 20px;
+        }
+
+        /* 空元素 */
+        :empty{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <span>span元素</span>
+    </div>
+
+    <br/><br/>
+
+    <div>
+        <span>span元素</span>
+        <span>span元素</span>
+        <p>p元素</p>
+    </div>
+
+    <br/><br/>
+
+    <div>
+        <span>span元素</span>
+        <p>p元素</p>
+        <p>p元素</p>
+    </div>
+
+    <br/><br/>
+
+    <div>
+        <span>span元素</span>
+        <p>p元素</p>
+    </div>
+
+    <div></div>
+</body>
+</html>

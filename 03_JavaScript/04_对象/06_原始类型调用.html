@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var str = 'Hello World';
+			var age = 18;
+
+			function String() {
+				this.str = str;
+				this.length = 11;
+				this.split = function () {};
+			}
+
+			let name = new String();
+			console.log(name);
+			name.length;
+			name.split(' ');
+
+			console.log(name.length);
+			console.log(name.split(' '));
+			console.log();
+		</script>
+	</body>
+</html>

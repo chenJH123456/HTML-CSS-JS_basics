@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 30px;
+        }
+
+
+        /* 后代选择器 */
+        .aox span{
+            background-color: red;
+        }
+        .dox span{
+            background-color: green;
+        }
+
+        /* 直接子代选择器 */ /*仅限一代*/
+        .eox > span{
+            background-color: blue;
+        }
+        .hox > span{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="aox">
+        <div class="box">
+            <span>后代选择器</span>
+        </div>
+    </div>
+    <div class="cox">
+        <div class="dox">
+            <span>后代选择器</span>
+        </div>
+    </div>
+    <div class="eox">
+        <div class="fox">
+            <span>后代选择器</span>
+        </div>
+    </div>
+    <div class="gox">
+        <div class="hox">
+            <span>后代选择器</span>
+        </div>
+    </div>
+</body>
+</html>

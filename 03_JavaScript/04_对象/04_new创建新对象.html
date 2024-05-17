@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function Coder(name, age, height) {
+				this.name = name;
+				this.age = age;
+				this.height = height;
+				this.running = function () {
+					console.log('running-');
+				};
+			}
+			var stu1 = new Coder('N', 18, 1.88);
+			var stu2 = new Coder('M', 19, 1.31);
+			var stu3 = new Coder('P', 17, 1.78);
+			console.log(stu1, stu2, stu3);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="box">
+			<span>aaaaaa</span>
+			<p>bbbbbb</p>
+		</div>
+		<script>
+			// 拿到 div.box元素
+			var boxEl = document.querySelector('.box');
+			console.log(boxEl);
+
+			// 方法一：innerHTML(不推荐)
+			// innerHTML:先解析再插入
+			// boxEl.innerHTML = `
+			//     <h2 class="title">标题</h2>
+			// `;
+
+			// secTimeout(function () {
+			// 	var titleEl = document.querySelector('.title');
+			// 	titleEl.classList.add('active');
+			// }, 2000);
+
+			// 方法二：真实创建一个DOM对象
+			var h2El = document.createElement('h2');
+			h2El.className = 'title';
+			h2El.classList.add('active');
+			h2El.textContent = '标题';
+
+			// 将元素插入boxEl
+			// boxEl.append(h2El);
+			// boxEl.prepend(h2El);
+			// boxEl.after(h2El);
+			// boxEl.before(h2El);
+			// 把boxEl替换成h2El
+			boxEl.replaceWith(h2El);
+		</script>
+	</body>
+</html>

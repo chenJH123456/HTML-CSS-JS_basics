@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			// 当文档加载解析完成之后浏览器才会回调执行
+			window.onload = function () {
+				var boxEl = document.querySelector('.box');
+				boxEl.style.backgroundColor = 'orange';
+			};
+		</script>
+
+		<div class="box"></div>
+	</body>
+</html>

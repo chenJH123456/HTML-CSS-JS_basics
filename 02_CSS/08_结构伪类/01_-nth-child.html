@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p:nth-child(3){
+            color: red;
+        }
+        div p:nth-child(7){
+            color: white;
+        }
+        div p:nth-of-type(7){
+            background-color: blue;
+        }
+        div p:nth-of-type(2n){
+            background-color: yellow;
+        }
+        div p:nth-last-child(-n+2){
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>段0</p>
+        <p>段1</p>
+        <p>段2</p>
+        <p>段3</p>
+        <p>段4</p>
+        <p>段5</p>
+        <span>段6</span>
+        <p>段7</p>
+        <p>段8</p>
+    </div>
+</body>
+</html>

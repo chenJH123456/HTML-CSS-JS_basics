@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				width: 500px;
+				height: 500px;
+				background-color: orange;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.item {
+				width: 110px;
+				height: 100px;
+
+				/* 给子元素,分配剩余空间 */
+				flex-grow: 1;
+			}
+			.item1 {
+				order: 9;
+			}
+			.item2 {
+				order: 3;
+
+				/* 全子元素设置后不可覆盖 */
+				flex-grow: 2;
+			}
+			.item3 {
+				order: -1;
+			}
+			.item4 {
+				order: 10;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item item1">1</div>
+			<div class="item item2">2</div>
+			<div class="item item3">3</div>
+			<div class="item item4">4</div>
+			<div class="item item5">5</div>
+			<div class="item item6">6</div>
+		</div>
+
+		<script src="../js/itemRandomColor.js"></script>
+	</body>
+</html>

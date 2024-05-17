@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var Count1 = 168574;
+			var Count2 = 2750759278340;
+			var Count3 = 10000000000000000;
+
+			function fCount(count) {
+				var result = 0;
+				if (count > 10_0000_0000) {
+					result = Math.floor(count / 1_0000_0000) + '亿';
+				} else if (count > 10_0000) {
+					result = Math.floor(count / 1_0000) + '万';
+				} else {
+					result = count;
+				}
+				return result;
+			}
+
+			console.log(fCount(Count1));
+			console.log(fCount(Count2));
+			console.log(fCount(Count3));
+		</script>
+	</body>
+</html>

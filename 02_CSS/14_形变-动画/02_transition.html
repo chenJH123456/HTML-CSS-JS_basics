@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				position: relative;
+				left: 0;
+
+				width: 200px;
+				height: 100px;
+				background-color: red;
+
+				/* 告知浏览器 box 在进行属性变化的时候有过度效果 */
+				transition-property: left;
+				transition-duration: 1s;
+				transition-timing-function: ease-in;
+				/* transition-timing-function: ease-out; */
+				/* transition-timing-function: ease-in-out; */
+
+				/* 延迟 */
+				transition-delay: 0.3s;
+
+				/* 应用全部 */
+				transition-property: all;
+
+				/* 简写 */
+                /* ????? */
+
+                
+                overflow: hidden;
+			}
+			.box:hover {
+				left: 200px;
+				/* all后不生效 */
+				transform: translate(50px);
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+	</body>
+</html>

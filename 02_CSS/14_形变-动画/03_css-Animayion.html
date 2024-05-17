@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 200px;
+				height: 100px;
+				background-color: rgba(141, 249, 131, 0.651);
+
+				/* 执行动画代码 */
+				animation-delay: 1s;
+
+				animation-name: moveAnim;
+				animation-duration: 5s;
+				animation-timing-function: ease-in-out;
+
+				/* 执行次数 */
+				/* animation-iteration-count: 100; */
+				/* 无限动画 */
+				animation-iteration-count: infinite;
+
+				/* 动画执行的方向 */
+				/* 反向 */
+				/* animation-direction: reverse; */
+
+				/* 元素最后停留在动画哪个位置 */
+				/* 原位 */
+				/* animation-fill-mode: none; */
+				/* 第一帧位 */
+				/* animation-fill-mode: backwards; */
+				/* 最后一帧位 */
+				/* animation-fill-mode: forwards; */
+			}
+
+			@keyframes moveAnim {
+				from {
+					transform: translate(0, 0) scale(1, 1);
+				}
+				25% {
+					transform: translate(0, 200px) scale(0.5, 0.5);
+				}
+				50% {
+					transform: translate(400px, 200px) scale(1.7, 1.7);
+				}
+				75% {
+					transform: translate(400px, 0) scale(0.4, 0.4);
+				}
+				to {
+					transform: translate(0, 0) scale(1, 1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br />
+	</body>
+</html>

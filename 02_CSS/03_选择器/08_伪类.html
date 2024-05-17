@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 动态伪类 *//*顺序LVFHA*/
+        .A:link{/*未访问的链接*/
+            color: red;
+        }
+        .B:visited{/*已访问的链接*/
+            color: red;
+        }
+        .C:focus{/*聚焦tab键*/
+            color: red;
+        }
+        .D:hover{/*悬浮*/
+            background-color: red;
+        }
+        .E:active{/*点击*/
+            background-color: red;
+        }
+
+        /* 目标伪类 */
+        .F:target{/*?????*/
+            background-color: red;
+        }
+
+        /* 语言伪类 */
+        /* .G:lang()????? */
+
+        /*元素状态伪类*/
+
+        /*结构伪类*/
+
+        /*否定伪类*/
+
+    </style>
+</head>
+<body>
+    <a class="A" href="https://www.baidu.com/">伪类A</a>
+    <div></div>
+    <a class="B" href="https://www.baidu.com/">伪类B</a>
+    <div class="C">伪类C</div>
+    <div class="D">伪类D</div>
+    <div class="E">伪类E</div>
+    <div class="F">伪类F</div>
+    <div class="G">伪类G</div>
+    <div class="H">伪类H</div>
+    <div class="I">伪类I</div>
+</body>
+</html>

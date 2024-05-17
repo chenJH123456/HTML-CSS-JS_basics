@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            font-size: 13px;
+            color: black;
+        }
+        .item{
+            display: inline-block;
+            width: 234px;
+            height: 330px;
+            background-color: #e0e0e0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .item img{
+            margin-top: 8px;
+            width: 220px;
+            height: 160px;
+        }
+        .item .desc{
+            color: black;
+            margin-top: 8px;
+
+            /* 不换行 */
+            white-space: nowrap;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+            /* 文本超出显示省略 */
+            text-overflow: ellipsis;
+        }
+        .item:hover{
+            background-color: rgb(237, 237, 237);
+            box-shadow: 0px 5px 20px 5px rgb(188, 188, 188);
+        }
+    </style>
+</head>
+<body>
+    <a class="item" href="#">
+        <img src="../00_图片/帝释天.jpg" width="200px" height="120px" alt="">
+        <h3>帝释天</h3>
+        <p class="desc">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+    </a>
+</body>
+</html>

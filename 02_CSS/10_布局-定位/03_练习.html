@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				height: 480px;
+				background-color: red;
+
+				/* 子元素随父元素高度自适应 */
+				overflow: hidden;
+			}
+			.box img {
+				position: relative;
+
+				/* 左移图片的一半 */
+				/* translate百分比相对于本身 */
+				transform: translate(-50%);
+				/* left: -1104px; */
+
+				/* 右移块级父元素的一半 */
+				margin-left: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img
+				src="../00_图片/季.jpg"
+				alt="" />
+		</div>
+	</body>
+</html>

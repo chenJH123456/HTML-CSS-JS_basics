@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				height: 100px;
+				background-color: orange;
+			}
+			.scroll-btn {
+				position: fixed;
+				right: 20px;
+				bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="scroll-btn">回到顶部</button>
+		<div class="box"></div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<script>
+			// 窗口实际大小
+			console.log(window.outerWidth);
+			console.log(window.outerHeight);
+			// 除调试区
+			console.log(window.innerWidth);
+			console.log(window.innerHeight);
+			// HTML占据宽高(不包含滚动条)
+			console.log(document.documentElement.offsetWidth);
+			console.log(document.documentElement.offsetHeight);
+
+			// 获取window的滚动区域
+			window.onclick = function () {
+				console.log(window.scrollX);
+				console.log(window.scrollY);
+			};
+			// 获取滚动条实时位置
+			// window.onscroll = function () {
+			// 	console.log(window.scrollY);
+			// };
+
+			// 点击后滚动到某一位置
+			var scrollBtnEl = document.querySelector('scroll-btn');
+
+			scrollBtnEl.onclick = function () {
+				// window.scrollBy(0, 100);
+				window.scrollTo(0, 0);
+			};
+		</script>
+	</body>
+</html>

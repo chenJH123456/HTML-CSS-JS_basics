@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="./css/reset.css" />
+		<link
+			rel="stylesheet"
+			href="./css/common.css" />
+		<style>
+			.top {
+				height: 70px;
+				background-color: #242424;
+				box-sizing: border-box;
+				border-bottom: 1px solid #000;
+			}
+
+			.topbar {
+				display: flex;
+				justify-content: space-between;
+				height: 69px;
+				line-height: 69px;
+				/* background-color: palegreen; */
+			}
+
+			.topbar .bar-left {
+				display: flex;
+			}
+
+			.topbar .bar-left .logo {
+				background-image: url(./image/topbar.png);
+			}
+
+			.topbar .bar-left .logo a {
+				display: block;
+				width: 157px;
+				padding-right: 20px;
+				text-indent: -9999px;
+			}
+
+			.topbar .bar-left .list {
+				display: flex;
+			}
+
+			.topbar .bar-left .list .item {
+				display: block;
+				position: relative;
+				font-size: 14px;
+				color: #d2d2d2;
+				padding: 0 20px;
+			}
+
+			.topbar .bar-left .list .item:hover,
+			.topbar .bar-left .list .item.active {
+				color: #fff;
+				background-color: #000;
+			}
+
+			.topbar .bar-left .list .item.active::after {
+				content: '';
+				position: absolute;
+				width: 12px;
+				height: 7px;
+				bottom: -2px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				background: url(./image/topbar.png) -226px 0;
+			}
+
+			/* 布局右侧 */
+			.topbar .bar-right {
+				display: flex;
+				align-items: center;
+				width: 310px;
+				padding-right: 20px;
+				justify-content: space-between;
+			}
+
+			.topbar .bar-right .login a {
+				color: #787878;
+				font-size: 12px;
+			}
+
+			.topbar .bar-right .login:hover a {
+				color: #fff;
+				border-color: #fff;
+			}
+
+			.topbar .bar-right .anthor a {
+				display: inline-block;
+				width: 90px;
+				height: 32px;
+				line-height: 32px;
+				color: #ccc;
+				text-align: center;
+				box-sizing: border-box;
+				border: 1px solid #4f4f4f;
+				border-radius: 20px;
+				font-size: 12px;
+			}
+
+			.topbar .bar-right .search {
+				display: flex;
+				justify-content: flex-end;
+				align-content: flex-end;
+				align-items: center;
+				width: 158px;
+				height: 32px;
+				box-sizing: border-box;
+				padding-right: 10px;
+				line-height: 32px;
+				border-radius: 30px;
+				background: #fff url(./image/topbar.png) 0 -99px;
+			}
+
+			.topbar .bar-right .search input {
+				width: 120px;
+				font-size: 12px;
+			}
+
+			.topbar .bar-right .search input::-webkit-input-placeholder {
+				color: #b8b8b8;
+			}
+
+			/* topnav */
+			/* 图片列表 */
+			.nav {
+				height: 35px;
+				line-height: 35px;
+				background-color: #c20c0c;
+				box-sizing: border-box;
+				border-bottom: 1px solid;
+			}
+
+			.nav .list {
+				display: flex;
+				padding-left: 190px;
+			}
+
+			.nav .list .item span {
+				display: inline-block;
+				padding: 0 7px;
+				margin: 7px 17px;
+				height: 20px;
+				line-height: 20px;
+				font-size: 12px;
+				color: rgb(223, 223, 223);
+				border-radius: 20px;
+				/* background-color: #9B0909; */
+			}
+
+			.nav .list .item:hover span,
+			.nav .list .item.active span {
+				background-color: #9b0909;
+			}
+
+			.banner {
+				/* filter: blur(80px); */
+				background: url(./image/banner-left.jpg) center center / 6000px;
+			}
+
+			.banner .area {
+				position: relative;
+				height: 285px;
+				background-color: orange;
+			}
+
+			.banner .area .area-left {
+				position: relative;
+				width: 730px;
+			}
+
+			.banner .area-left .img-list {
+				display: flex;
+				overflow: hidden;
+			}
+
+			.banner .area-left .img-list li {
+				flex-shrink: 0;
+				width: 100%;
+			}
+
+			.banner .area-left .img-list .item {
+				display: block;
+			}
+
+			.banner .area-left .img-list .item img {
+				width: 100%;
+				height: 285px;
+			}
+
+			/* 按钮列表 */
+			.banner .area-left .dots-list {
+				position: absolute;
+				display: flex;
+				bottom: 5px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				justify-content: center;
+			}
+
+			.banner .area-left .dots-list li {
+				margin: 0 3px;
+			}
+
+			.banner .area-left .dots-list .item {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: url(./image/banner.png) 3px -343px;
+			}
+
+			.banner .area-left .dots-list .item:hover,
+			.banner .area-left .dots-list .item.active {
+				background-position: -16px -343px;
+			}
+
+			/* 右侧的内容 */
+			.banner .area .area-right {
+				position: absolute;
+				right: -1px;
+				top: 0;
+				bottom: 0;
+				width: 254px;
+				background: url(./image/download-right.png);
+			}
+
+			.banner .area-right .download {
+				display: block;
+				width: 215px;
+				height: 56px;
+				margin: 186px 0 0 19px;
+				text-indent: -9999px;
+			}
+
+			.banner .area-right .download:hover {
+				background: url(./image/download-right.png) 0 -290px;
+			}
+
+			.banner .area-right .desc {
+				margin-top: 10px;
+				font-size: 12px;
+				color: #8d8d8d;
+				text-align: center;
+			}
+
+			/* 两个控制按钮 */
+			.banner .area .control {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 37px;
+				height: 63px;
+				margin: auto 0;
+				background-image: url(./image/banner.png);
+			}
+			.banner .area .control.left {
+				left: -70px;
+				background-position: 0 -360px;
+			}
+			.banner .area .control.left:hover {
+				background-position: 0 -430px;
+			}
+			.banner .area .control.right {
+				right: -70px;
+				background-position: 0 -508px;
+			}
+			.banner .area .control.right:hover {
+				background-position: 0 -578px;
+			}
+
+			/* 主体 */
+			.main > .area {
+				display: flex;
+				justify-content: space-between;
+				height: 500px;
+				border: 1px solid #d3d3d3;
+				border-width: 0 1px;
+				background-image: url(./image/wrap1.png);
+			}
+
+			/* 左边 */
+			.main .area-left {
+				width: 729px;
+				padding: 20px 20px 40px 20px;
+				/* background-color: #aeaeae; */
+			}
+
+			.recommend-section .list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				padding: 20px 2px;
+			}
+
+			.recommend-section .list .item {
+				width: 140px;
+				height: 140px;
+				background-color: #9b0909;
+				margin-bottom: 30px;
+			}
+
+			/* 新碟上架 */
+			.dist-section .content {
+				height: 186px;
+				margin: 20px 0;
+				box-sizing: border-box;
+				border: 1px solid #d3d3d3;
+			}
+
+			.dist-section .content .inner {
+				height: 100%;
+				box-sizing: border-box;
+				padding: 0 20px;
+				border: 1px solid white;
+				background-color: #f5f5f5;
+			}
+
+			.dist-section .content .roller {
+				display: flex;
+				height: 100%;
+				background-color: red;
+				overflow: hidden;
+			}
+
+			.dist-section .content .roller .list {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				flex-shrink: 0;
+				background-color: rgba(255, 180, 143, 0.719);
+			}
+
+			.dist-section .roller .list .item {
+				width: 118px;
+				height: 150px;
+			}
+
+			/* 排行榜 */
+			.rank-section {
+				height: 472px;
+				background: url(./image/bill.png);
+				margin-top: 20px;
+			}
+			/* 右边 */
+			.main .area-right {
+				width: 250px;
+				/* background-color: #8d8d8d; */
+			}
+
+			.main .area-right .user-login {
+				width: 250px;
+				height: 126px;
+				background: url(./image/index.png);
+			}
+
+			.main .area-right .user-login .text {
+				width: 205px;
+				margin: 0 auto;
+				padding-top: 16px;
+				font-size: 12px;
+				color: #787878;
+				line-height: 22px;
+			}
+			.main .area-right .user-login .button {
+				display: block;
+				width: 100px;
+				height: 31px;
+				line-height: 31px;
+				text-align: center;
+				margin: 0 auto;
+				color: white;
+				font-size: 12px;
+				margin-top: 15px;
+				background: url(./image/index.png) 0 -195px;
+			}
+			.main .area-right .user-login .button:hover {
+				background: url(./image/index.png) -110px -195px;
+			}
+
+			/* 右下部分 */
+			.main .settle-signer {
+				padding: 20px;
+			}
+
+			.main .settle-signer .list {
+			}
+
+			.main .settle-signer .list .item {
+				display: flex;
+				width: 210px;
+				height: 62px;
+				margin-top: 14px;
+				background-color: #f4f4f4;
+			}
+
+			.main .settle-signer .list .item .info {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				padding: 8px;
+				border: 1px solid #e4e4e4;
+				border-left: none;
+			}
+
+			.main .settle-signer .item .info .signer {
+				font-size: 14px;
+				font-weight: 700;
+				color: #000;
+			}
+
+			.main .settle-signer .item .info .desc {
+				font-size: 12px;
+				color: #666;
+				margin-top: -4px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+
+			.main .hot-anchor {
+				padding: 20px;
+			}
+
+			/* 右下按钮 */
+			.apply {
+				display: inline-block;
+				width: 210px;
+				height: 31px;
+				line-height: 31px;
+				text-align: center;
+				font-size: 12px;
+				font-weight: 700;
+				color: #000;
+				box-sizing: border-box;
+				margin-left: 20px;
+
+				background: url(./image/button2.png) right -100px;
+				padding-right: 5px;
+			}
+
+			.apply > i {
+				display: block;
+				height: 31px;
+				background: url(./image/button2.png) 0 -59px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<div class="topbar wrapper_01">
+				<div class="bar-left">
+					<h1 class="logo">
+						<a href="#">网易云音乐</a>
+					</h1>
+					<ul class="list">
+						<li>
+							<a
+								href="#"
+								class="item active"
+								>发现音乐</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="item"
+								>我的音乐</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="item"
+								>关注</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="item"
+								>商城</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="item"
+								>音乐人</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="item icon-hot"
+								>下载客户端</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="bar-right">
+					<div class="search">
+						<!-- 占位文字 -->
+						<input
+							type="text"
+							placeholder="音乐/视频/电台/用户" />
+					</div>
+					<div class="anthor">
+						<a href="#">创作者中心</a>
+					</div>
+					<div class="login">
+						<a href="#">登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="navbar wrapper_01">
+				<!-- 如果block元素中没有内容,line-height继承不生效 -->
+				<ul class="list">
+					<li>
+						<a
+							href="#"
+							class="item active"
+							><span>推荐</span></a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="item"
+							><span>排行榜</span></a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="item"
+							><span>歌单</span></a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="item"
+							><span>主播电台</span></a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="item"
+							><span>歌手</span></a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="item"
+							><span>新碟上架</span></a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="area wrapper_03">
+				<div class="area-left">
+					<ul class="img-list">
+						<li>
+							<a
+								class="item"
+								href="#"
+								><img
+									src="./image/banner-left.jpg"
+									alt=""
+							/></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><img
+									src="./image/banner-left.jpg"
+									alt=""
+							/></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><img
+									src="./image/banner-left.jpg"
+									alt=""
+							/></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><img
+									src="./image/banner-left.jpg"
+									alt=""
+							/></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><img
+									src="./image/banner-left.jpg"
+									alt=""
+							/></a>
+						</li>
+					</ul>
+					<ul class="dots-list">
+						<li>
+							<a
+								class="item active"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+						<li>
+							<a
+								class="item"
+								href="#"
+								><span></span
+							></a>
+						</li>
+					</ul>
+				</div>
+				<div class="area-right">
+					<a
+						class="download"
+						href="#"
+						>下载客户端</a
+					>
+					<p class="desc">PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+				</div>
+				<a
+					class="control left"
+					href="#"></a>
+				<a
+					class="control right"
+					href="#"></a>
+			</div>
+		</div>
+		<div class="main">
+			<div class="area wrapper_02">
+				<div class="area-left">
+					<div class="recommend-section">
+						<div class="header_type_02">
+							<div class="left">
+								<h2 class="title">热门推荐</h2>
+							</div>
+							<ul class="keywords">
+								<li>
+									<a
+										class="item"
+										href="#"
+										>华语</a
+									>
+								</li>
+								<li class="line">|</li>
+								<li>
+									<a
+										class="item"
+										href="#"
+										>流行</a
+									>
+								</li>
+								<li class="line">|</li>
+								<li>
+									<a
+										class="item"
+										href="#"
+										>摇滚</a
+									>
+								</li>
+								<li class="line">|</li>
+								<li>
+									<a
+										class="item"
+										href="#"
+										>民谣</a
+									>
+								</li>
+								<li class="line">|</li>
+								<li>
+									<a
+										class="item"
+										href="#"
+										>电子</a
+									>
+								</li>
+							</ul>
+							<div class="right">
+								<a
+									class="more"
+									href="#"
+									>更多</a
+								>
+							</div>
+						</div>
+						<div class="list">
+							<div class="item">见10-布局-定位_绝对定位-练习</div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+						</div>
+
+						<div class="header_type_02">
+							<div class="left">
+								<h2 class="title">新碟上架</h2>
+							</div>
+							<div class="right">
+								<a
+									class="more"
+									href="#"
+									>更多</a
+								>
+							</div>
+						</div>
+						<div class="dist-section">
+							<div class="content">
+								<div class="inner">
+									<div class="roller">
+										<ul class="list">
+											<li class="item"></li>
+											<li class="item"></li>
+											<li class="item"></li>
+											<li class="item"></li>
+											<li class="item"></li>
+										</ul>
+										<ul class="list">
+											2
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="header_type_02">
+							<div class="left">
+								<h2 class="title">榜单</h2>
+							</div>
+							<div class="right">
+								<a
+									class="more"
+									href="#"
+									>更多</a
+								>
+							</div>
+						</div>
+						<div class="rank-section">
+							<dir class="content"></dir>
+						</div>
+					</div>
+				</div>
+				<div class="area-right">
+					<div class="user-login">
+						<p class="text">
+							登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
+						</p>
+						<a
+							class="button"
+							href="#"
+							>用户登录</a
+						>
+					</div>
+					<div class="settle-signer">
+						<div class="header_type_01">
+							<h3 class="title">入驻歌手</h3>
+							<a
+								class="more"
+								href="#"
+								>查看全部 &gt;</a
+							>
+						</div>
+						<ul class="list">
+							<li>
+								<a
+									class="item"
+									href="#">
+									<div class="album">
+										<img
+											src="./image/signer1.jpg"
+											alt="" />
+									</div>
+									<div class="info">
+										<div class="signer">张惠妹aMEI</div>
+										<div class="desc">台湾歌手张惠妹</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a
+									class="item"
+									href="#">
+									<div class="album">
+										<img
+											src="./image/signer1.jpg"
+											alt="" />
+									</div>
+									<div class="info">
+										<div class="signer">张惠妹aMEI</div>
+										<div class="desc">台湾歌手张惠妹</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a
+									class="item"
+									href="#">
+									<div class="album">
+										<img
+											src="./image/signer1.jpg"
+											alt="" />
+									</div>
+									<div class="info">
+										<div class="signer">张惠妹aMEI</div>
+										<div class="desc">台湾歌手张惠妹</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a
+									class="item"
+									href="#">
+									<div class="album">
+										<img
+											src="./image/signer1.jpg"
+											alt="" />
+									</div>
+									<div class="info">
+										<div class="signer">张惠妹aMEI</div>
+										<div class="desc">台湾歌手张惠妹</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a
+									class="item"
+									href="#">
+									<div class="album">
+										<img
+											src="./image/signer1.jpg"
+											alt="" />
+									</div>
+									<div class="info">
+										<div class="signer">张惠妹aMEI</div>
+										<div class="desc">台湾歌手张惠妹</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<a
+						class="apply"
+						href="#">
+						<i>申请成为网易音乐人</i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

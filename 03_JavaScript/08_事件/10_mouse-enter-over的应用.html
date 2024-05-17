@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				display: flex;
+				width: 300px;
+				height: 300px;
+				background-color: orange;
+			}
+
+			.box button {
+				flex: 1;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button>删除</button>
+			<button>新增</button>
+			<button>搜索</button>
+		</div>
+
+		<script>
+			// 方案一:直接监听buttom本身(性能低)
+			// var btnEls = document.querySelectorAll('button');
+			// for (var i = 0; i < btnEls.length; i++) {
+			// 	btnEls[i].onmouseover = function (event) {
+			// 		console.log(event.target.textContent);
+			// 	};
+			// }
+
+			// 方案二:事件委托
+			var boxEl = document.querySelector('.box');
+			boxEl.onmouseover = function (event) {
+				if (event.target.tagName === 'BUTTON') {
+					console.log(event.target.textContent);
+				}
+			};
+		</script>
+	</body>
+</html>

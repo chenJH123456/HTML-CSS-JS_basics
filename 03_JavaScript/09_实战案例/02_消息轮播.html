@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.tip-bar {
+				display: inline-flex;
+				align-items: center;
+				height: 30px;
+				background-color: rgba(0, 0, 0, 0.4);
+			}
+			img {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				margin-right: 5px;
+			}
+			span {
+				font-size: 13px;
+				color: aliceblue;
+				margin-right: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tip-bar">
+			<img
+				src="../../02_CSS/00_图片/季.jpg"
+				alt="" />
+			<span>季女士对这件商品感兴趣</span>
+		</div>
+
+		<script>
+			// 1.从服务器拿到数据ajax/fetch请求
+			let tipList = [
+				{
+					icon: '../../02_CSS/00_图片/bilibili图片.avif',
+					title: '上官婉儿对这件商品感兴趣',
+				},
+				{
+					icon: '../../02_CSS/00_图片/帝释天.jpg',
+					title: '帝释天对这件商品感兴趣',
+				},
+			];
+
+			// 2.动态切换数据
+			// 获取元素
+			var tipBar = document.querySelector('.tip-bar');
+			var imgEl = tipBar.querySelector('img');
+			var spanEl = document.querySelector('span');
+			// 3s切换一次数据
+			var currentIndex = 0;
+			setInterval(function () {
+				var tipItem = tipList[currentIndex];
+
+				imgEl.src = tipItem.icon;
+				spanEl.textContent = tipItem.title;
+				currentIndex++;
+				if (currentIndex === tipList.length) {
+					currentIndex = 0;
+				}
+			}, 3000);
+
+			// 随机
+			// Math.floor(Math.random() * tipList.length);
+		</script>
+	</body>
+</html>

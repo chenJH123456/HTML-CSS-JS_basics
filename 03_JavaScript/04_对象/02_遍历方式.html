@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var info = {
+				name: 'N',
+				age: 19,
+				height: 1.88,
+			};
+
+			// 复刻函数里的key
+			var infoKeys = Object.keys(info);
+			// 函数 "key-值" 遍历
+			for (var i = 0; i < infoKeys.length; i++) {
+				var key = infoKeys[i];
+				var value = info[key];
+				console.log(`key: ${key},value: ${value}`);
+			}
+		</script>
+	</body>
+</html>
+ 

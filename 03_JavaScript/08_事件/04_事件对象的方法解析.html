@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+			.box span {
+				width: 100px;
+				height: 100px;
+				background-color: rebeccapurple;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">百度</a>
+		<div class="box">
+			<span></span>
+		</div>
+		<script>
+			// 阻止事件
+			// 方法一:event.preventDefault  阻止默认行为
+			var aEl = document.querySelector('a');
+
+			aEl.onclick = function (event) {
+				console.log('点击了a元素');
+				event.preventDefault(); //阻止默认行为
+			};
+
+			// 方法二:event.stopPropagation  阻止事件进一步传递
+			var bodyEl = document.body;
+			var divEl = document.querySelector('.box');
+			var spanEl = document.querySelector('span');
+
+			divEl.onclick = function () {
+				console.log('冒泡div元素');
+			};
+			spanEl.onclick = function () {
+				console.log('冒泡span元素');
+			};
+			bodyEl.onclick = function () {
+				console.log('冒泡body元素');
+			};
+
+			// 从外往里捕获(事件捕获)
+			spanEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了span元素');
+				},
+				true
+			);
+			divEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了div元素');
+
+					event.stopPropagation(); //阻断
+				},
+				true
+			);
+			bodyEl.addEventListener(
+				'click',
+				function () {
+					console.log('捕获了body元素');
+				},
+				true
+			);
+		</script>
+	</body>
+</html>

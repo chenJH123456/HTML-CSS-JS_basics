@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 1.字符串形式
+			var date = new Date();
+
+			console.log(date);
+			console.log(date.toDateString());
+			console.log(date.toISOString());
+
+			// 2.获取时间信息
+			var year = date.getFullYear();
+			console.log(year);
+			var month = date.getMonth(); //获取值为0-11
+			console.log(month);
+			var day = date.getDate();
+			console.log(day);
+
+			// Hours,Minutes,Seconds同上
+			console.log(`${year}/${month}/${day}`);
+
+			// 3.设置时间
+			date.setFullYear(2023);
+			console.log(date);
+
+			// 4.Date对象, 转成时间戳
+			// 当前对象的时间戳
+			var timestamp1 = Date.now();
+			console.log(timestamp1);
+
+			// 将一个date对象转成时间戳
+			var timestamp2 = date.getTime();
+			var timestamp3 = date.valueOf();
+			console.log(timestamp2, timestamp3);
+		</script>
+	</body>
+</html>

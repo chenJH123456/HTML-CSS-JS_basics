@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 其他的基础看 typora
+
+			// String 获取
+			var message = 'Hello World';
+			console.log(message.slice(3, 7)); //不包含最后一位
+			console.log(message.slice(3, -1)); //包含最后一位
+			console.log(message.slice(3));
+
+			// String 拼接
+			var str1 = 'Hello';
+			var str2 = ' World';
+			var str3 = '!';
+
+			// 1. +
+			// var newString = str1 + str2 + str3;
+
+			// 2. concat 链式调用
+			// var newString = str1.concat(str2).concat(str3);
+			var newString = str1.concat(str2, str3);
+
+			console.log(newString);
+
+			// 删除首尾空格
+			console.log('          wlejdh  eh   '.trim());
+
+			// 字符切割 (!!!常用!!!)
+			var messAge = 'abc-nwei-qys-jsh';
+			var items = messAge.split('-');
+			console.log(items); //返回类型是数组
+		</script>
+	</body>
+</html>

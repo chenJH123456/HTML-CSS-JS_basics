@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link
+			rel="stylesheet"
+			href="../09_字体资源/字体图标/iconfont.css" />
+
+		<style>
+			a {
+				text-decoration: none;
+				color: black;
+			}
+			.item {
+				width: 140px;
+				margin: 0 auto;
+			}
+			.item .top {
+				/* 子绝父相 */
+				position: relative;
+
+				background-color: red;
+			}
+			.item .top img {
+				/* 去除图片下多出来的区域 */
+				vertical-align: top;
+			}
+			.item .top .cover {
+				position: absolute;
+
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				width: 140px;
+				height: 140px;
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+			.item .top .info {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 27px;
+				font-size: 15px;
+				color: #999;
+				background-color: rgba(0, 0, 0, 0.4);
+			}
+			.item .bottom {
+				display: block;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="item">
+			<div class="top">
+				<img
+					src="../00_图片/bilibili图片.avif"
+					width="140px"
+					height="140px"
+					alt="" />
+				<a
+					class="cover"
+					href="#"></a>
+				<a
+					class="info"
+					href="#">
+					<span class="iconfont icon-wenjian"></span>
+					<span>aaaaaaa</span>
+					<span
+						class="iconfont icon-baocun"
+						style="right: 0px"></span>
+				</a>
+			</div>
+			<a
+				class="bottom"
+				href="#"
+				>天气好的话，把耳机分我一半吧</a
+			>
+		</div>
+	</body>
+</html>

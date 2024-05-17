@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.top-bar {
+				display: flex;
+				justify-content: end;
+				text-align: center;
+				width: 300px;
+				height: 150px;
+				background-color: orange;
+				transition-property: all;
+				transition-duration: 0.3s;
+				transition-timing-function: ease-in;
+			}
+			.delete {
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
+				background-color: red;
+				transition-property: all;
+				transition-duration: 0.3s;
+				transition-timing-function: ease-in;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top-bar">
+			<div class="delete">关闭</div>
+		</div>
+		<script>
+			var topBar = document.querySelector('.top-bar');
+			var deleteEl = topBar.querySelector('.delete');
+
+			deleteEl.onclick = function () {
+				topBar.style.height = 0;
+				deleteEl.style.height = 0;
+			};
+		</script>
+	</body>
+</html>

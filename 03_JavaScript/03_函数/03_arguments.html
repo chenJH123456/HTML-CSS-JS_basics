@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function foo(name, age) {
+				console.log(name, age);
+				console.log(arguments);
+				console.log(typeof arguments);
+				// console.log(arguments[0]);
+				// console.log(arguments[1]);
+				// console.log(arguments[2]);
+				// console.log(arguments[3]);
+
+				for (var i = 0; i < arguments.length; i++) {
+					console.log(arguments[i]);
+				}
+			}
+
+			foo('N', 18, 1.88, '四川');
+		</script>
+	</body>
+</html>

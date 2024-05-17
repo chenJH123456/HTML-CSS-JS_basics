@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var person = {
+				// key:一半""可以省略
+				name: 'N',
+				age: 18,
+				height: 1.88,
+				// 方法(method)
+				run: function () {
+					console.log('running');
+					console.log('swimming');
+				},
+				eat: function () {
+					console.log('eat foods');
+				},
+				study: function () {
+					console.log('studying');
+				},
+
+				friend: {
+					name: 'S',
+					age: 17,
+				},
+			};
+
+			// 访问对象里的属性
+			console.log(person.friend.age);
+			console.log(person["age"]);
+			console.log(person.age);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				display: inline-block;
+				border: 20px solid #f00;
+			}
+			.box1 {
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+
+				/* 位移 */
+				/* 百分比是相对自身的 */
+				transform: translate(-50%, 50px);
+			}
+			.box2 {
+				width: 200px;
+				height: 200px;
+				background-color: aquamarine;
+
+				/* 形变/缩放 */
+				/* transform: scale(0.6, 60%); */
+			}
+			.box2:hover {
+				transform: scale(1.1, 1.1);
+			}
+			.box3 {
+				width: 200px;
+				height: 200px;
+				background-color: rgb(95, 49, 220);
+			}
+			.box3:hover {
+				/* 旋转 */
+				transform: rotate(30deg);
+			}
+			.box3 {
+				/* 修改元素形变顶点位置 */
+				/* transform-origin: left top; */
+				/* transform-origin: left; */
+				transform-origin: 50px 100px;
+			}
+			.box4 {
+				width: 200px;
+				height: 200px;
+				background-color: rgb(49, 220, 60);
+			}
+			.box4:hover {
+				/* 倾斜 */
+				transform: skew(-50deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box1"></div>
+		</div>
+		<div class="container">
+			<div class="box2"></div>
+		</div>
+		<div class="container">
+			<div class="box3"></div>
+		</div>
+		<div class="container">
+			<div class="box4"></div>
+		</div>
+	</body>
+</html>
