@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table {
+				/* width: 540px; */
+				border-collapse: collapse; /*合并单元格*/
+			}
+			thead {
+				background-color: rgb(234, 234, 234);
+			}
+			th,
+			td {
+				border: 1px solid black;
+				padding: 8px 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>书籍名称</th>
+					<th>出版日期</th>
+					<th>价格</th>
+					<th>购买数量</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<h2 class="price">总价格: ￥<span class="price-count">0</span></h2>
+		<script>
+			// 1.从服务器获取数据 ajax/fetch
+			var books = [
+				{
+					id: 1,
+					name: '《算法导论》',
+					date: '2006-09',
+					price: 85.0,
+					count: 3,
+				},
+				{
+					id: 2,
+					name: '《UNIX编程艺术》',
+					date: '2006-02',
+					price: 59.0,
+					count: 2,
+				},
+				{
+					id: 3,
+					name: '《编程珠玑》',
+					date: '2008-10',
+					price: 39.0,
+					count: 5,
+				},
+				{
+					id: 4,
+					name: '《代码大全》',
+					date: '2006-03',
+					price: 128.0,
+					count: 8,
+				},
+			]
+
+			// 2.对数据展示
+			// 固定数据用HTML写(能用HTML用HTML)
+			// 大量数据，有规律的数据用JS写
+			var tbodyEl = document.querySelector('tbody')
+
+			// 3.动态添加tr内部数据
+			for (var i = 0; i < books.length; i++) {
+				// 创建新对象
+				var trowEl = document.createElement('tr')
+
+				// 放具体数据
+				var book = books[i]
+				var bookKeys = Object.keys(book)
+				for (var m = 0; m < bookKeys.length; m++) {
+					var key = bookKeys[m]
+					var value = book[key]
+					var tdEl = document.createElement('td')
+					tdEl.textContent = value
+					trowEl.append(tdEl)
+				}
+
+				// 添加删除按钮
+				var deleteTdEl = document.createElement('td')
+				var deleteBtnEl = document.createElement('button')
+				deleteBtnEl.textContent = '删除'
+				deleteTdEl.append(deleteBtnEl)
+				trowEl.append(deleteTdEl)
+
+				// 4.监听按钮点击
+				deleteBtnEl.onclick = function () {
+					var deleteRowEl = this.parentElement.parentElement
+					var deletetrIndex = deleteRowEl.sectionRowIndex
+					deleteRowEl.remove()
+					// 删除books数据
+					books.splice(deletetrIndex, 1)
+					// 重新计算价格(可封装成函数)
+					var sum = books.reduce(function (preValue, item) {
+						return preValue + item.count * item.price
+					}, 0)
+					priceCountEl.textContent = sum
+				}
+
+				// 向tbody里插入新对象
+				tbodyEl.append(trowEl)
+			}
+
+			// 5.计算总价格
+			var priceCountEl = document.querySelector('.price-count')
+			// var sum = 0
+			// for (var i = 0; i < books.length; i++) {
+			// 	sum += books[i].count * books[i].price
+			// }
+			var sum = books.reduce(function (preValue, item) {
+				return preValue + item.count * item.price
+			}, 0)
+			priceCountEl.textContent = sum
+		</script>
+	</body>
+</html>

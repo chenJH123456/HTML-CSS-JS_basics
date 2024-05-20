@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			a {
+				text-decoration: none;
+				color: black;
+				outline: none;
+			}
+			h2,
+			p {
+				margin: 0;
+			}
+			.box {
+				width: 700px;
+				height: 70px;
+				border-top: 1.5px solid #d4d4d4;
+				/* background-color: #cdcdcd; */
+			}
+			.box .title {
+				display: flex;
+				margin-bottom: 10px;
+			}
+			.box .title .bar-left h2 {
+				margin-top: 4px;
+				margin-left: 20px;
+			}
+			.box .title .bar-right {
+				display: flex;
+				justify-content: flex-end;
+				margin-left: auto;
+				margin-right: 20px;
+				justify-content: space-between;
+			}
+			.box .title .bar-right a {
+				font-size: 14px;
+				right: 0;
+				margin-top: 8px;
+			}
+
+			.box .select {
+				display: flex;
+				justify-content: space-between;
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				background-color: #efefef;
+			}
+			.box .select a {
+				width: 300px;
+				font-size: 13px;
+			}
+			.box .select .bor {
+				border-left: 1px solid #d1d1d1;
+				border-right: 1px solid #d1d1d1;
+			}
+			.box .select a:hover {
+				background-color: #f6f6f6;
+				border-bottom: 3px solid rgba(255, 200, 0, 0.858);
+			}
+			.box .select a.active {
+				background-color: #f6f6f6;
+				border-bottom: 3px solid rgba(255, 200, 0, 0.858);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="title">
+				<div class="bar-left">
+					<h2>内容中心</h2>
+				</div>
+				<div class="bar-right">
+					<a href="#" class="item">更多</a>
+				</div>
+			</div>
+			<div class="select">
+				<a href="#" class="active">精品栏目</a>
+				<a href="#" class="bor">赛事精品</a>
+				<a href="#">英雄攻略</a>
+			</div>
+		</div>
+
+		<script>
+			var selectContainer = document.querySelector('.select')
+			console.log(selectContainer)
+			var activeEl = selectContainer.querySelector('.active')
+			console.log(activeEl)
+			selectContainer.addEventListener('click', function (event) {
+				activeEl.classList.remove('active')
+				activeEl = event.target
+				activeEl.classList.add('active')
+			})
+		</script>
+	</body>
+</html>
